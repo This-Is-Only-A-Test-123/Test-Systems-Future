@@ -1,0 +1,44 @@
+name: Problem Report
+description: Create a report to help us improve
+title: '[Problem Report] '
+labels: ''
+assignees: '' 
+body:
+  - id: repository
+    type: dropdown
+    attributes:
+      label: Product Affected
+      description: Which product does this problem occur in?
+      validations:
+        required: true
+      options:
+        - All # Goes to the Test-Systems repository
+        - 650XXX-Widget-FBT
+        - 650XXX-Widget-ESS
+        - 650XXX-Widget-ATP
+  - id: description
+    type: textarea
+    attributes:
+      label: Problem Description
+      description: Please describe the problem in as much detail as possible
+    validations:
+      required: true
+  - id: logs
+    type: textarea
+    attributes:
+      label: Relevant log output
+      description: Paste any logs here
+      render: shell
+  - id: test1
+    type: textarea
+    attributes:
+      label: test1
+      description: test1 description
+      placeholder: test1 placeholder
+      value: test1 value
+  - id: test2
+    type: input
+    attributes:
+      label: test2
+      description: test2 description
+      placeholder: test2 placeholder
