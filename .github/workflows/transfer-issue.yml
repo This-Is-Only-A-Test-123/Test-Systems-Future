@@ -1,0 +1,16 @@
+name: Sort New Issues
+on:
+  issues:
+    types:
+      - edited
+  workflow_dispatch:
+
+jobs:
+  transfer-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh issue transfer $ISSUE This-Is-Only-A-Test-123/$TARGET_REPO
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
+          $TARGET_REPO: 650XXX-Widget-FBT # Eventually this will extract the repository name from the issue itself.
