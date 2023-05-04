@@ -1,7 +1,7 @@
 name: Problem Report
 description: Create a report to help us improve
 title: "[Problem Report] "
-#labels: ''
+labels: 'status/new'
 #assignees: '' 
 body:
 - id: repository
