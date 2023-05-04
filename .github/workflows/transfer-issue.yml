@@ -17,4 +17,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.html_url }}
-          TARGET_REPO: This-Is-Only-A-Test-123/650XXX-Widget-FBT # Eventually this will extract the repository name from the issue itself.
+          TARGET_REPO: https://github.com/This-Is-Only-A-Test-123/650XXX-Widget-FBT # Eventually this will extract the repository name from the issue itself.
