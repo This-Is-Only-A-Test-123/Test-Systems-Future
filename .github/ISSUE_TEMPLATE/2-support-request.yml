@@ -1,0 +1,93 @@
+name: Support Request
+description: Create a request for support
+title: "[Support Request] "
+labels: 'status/new'
+assignees: 'WilliamMiceli' 
+body:
+- id: requesting_organization
+  type: dropdown
+  attributes:
+    label: Requesting Organization
+    options:
+      - Manufacturing
+      - Aftermarket
+      - Production Quality
+      - Supplier Quality
+      - Sourcing
+      - Program Management
+      - Customer
+      - Engineering
+      - Other
+  validations:
+    required: true
+- id: requesting_organization_location
+  type: dropdown
+  attributes:
+    label: Location
+    description: Location of the Requesting Organization
+    options:
+      - Clearwater
+      - Grand Rapids
+  validations:
+    required: true
+- id: part_name
+  type: input
+  attributes:
+    label: Part Name
+    description: The Name and/or Description of the part
+  validations:
+    required: true
+- id: part_number
+  type: input
+  attributes:
+    label: Part Number
+    description: The identifying part number
+  validations:
+    required: true
+- id: priority
+  type: dropdown
+  attributes:
+    label: Priority
+    options:
+      - Urgent (AOG)
+      - Urgent (Ship Hold)
+      - Important (SPMT)
+      - Important (FAI or SPR)
+      - Medium (Supplier Quality, Product Improvements)
+      - Routine (General Support)
+  validations:
+    required: true
+- id: request
+  type: textarea
+  attributes:
+    label: Request
+    description: Description of the request
+  validations:
+    required: true
+- id: due_date
+  type: input
+  attributes:
+    label: Request Due Date
+    description: When does this request need to be completed by?
+  validations:
+    required: true
+- id: lru_name
+  type: input
+  attributes:
+    label: Top-Level Name
+    description: Affected Top-Level LRU Name
+  validations:
+    required: true
+- id: lru_number
+  type: input
+  attributes:
+    label: Top-Level Number
+    description: Affected Top-Level LRU Number
+  validations:
+    required: true
+- id: program_name
+  type: input
+  attributes:
+    label: Program Name
+  validations:
+    required: true
