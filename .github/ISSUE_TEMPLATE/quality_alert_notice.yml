@@ -1,0 +1,84 @@
+name: Quality Alert Notice
+description: QAN
+title: "[QAN] "
+labels: 'status/new'
+#assignees: ''
+body:
+- id: part_number
+  type: input
+  attributes:
+    label: Part Number
+    description: Identifying part number
+- id: part_description
+  type: input
+  attributes:
+    label: Part Description
+    description: Description of the part
+- id: customers
+  type: input
+  attributes:
+    label: Customers
+- id: request_customer
+  type: input
+  attributes:
+    label: Applicable Customer Requests
+- id: request_ge
+  type: input
+  attributes:
+    label: Applicable GE Requests
+- id: issue_definition
+  type: textarea
+  attributes:
+    label: Issue Definition
+  validations:
+    required: true
+- id: impact_assessment
+  type: textarea
+  attributes:
+    label: Impact Assessment
+  validations:
+    required: true
+- id: containment_status
+  type: textarea
+  attributes:
+    label: Containment Status
+  validations:
+    required: true
+- id: team
+  type: textarea
+  attributes:
+    label: Team (Formation)
+  validations:
+    required: true
+- id: correction
+  type: textarea
+  attributes:
+    label: Correction
+    description: Mitigation Plan for Stock
+- id: root_cause
+  type: textarea
+  attributes:
+    label: Root Cause
+    description: Working Theory Set
+  validations:
+    required: true
+- id: root_cause_chosen
+  type: textarea
+  attributes:
+    label: Root Cause (Chosen)
+    description: Chosen/Proven
+- id: corrective_action_plan
+  type: textarea
+  attributes:
+    label: Corrective Action Plan
+    description: Dependent on RCA
+- id: preventative_action_plan
+  type: textarea
+  attributes:
+    label: Preventative Action Plan
+    description: If applicable
+- id: verification
+  type: textarea
+  attributes:
+    label: Verification
+    description: Of effectiveness, for closure
