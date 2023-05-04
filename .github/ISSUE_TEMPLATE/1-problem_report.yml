@@ -1,6 +1,6 @@
 name: Problem Report
 description: Create a report to help us improve
-title: "[Problem Report] "
+title: "[Problem Report] <your title here>"
 labels: 'status/new'
 #assignees: '' 
 body:
