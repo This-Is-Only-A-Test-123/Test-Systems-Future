@@ -13,7 +13,7 @@ on:
 jobs:
   assign-for-triage:
     if: |
-      contains(github.event.pull_request.labels.*.name, 'status/new')
+      contains(github.event.issue.labels.*.name, 'status/new')
     runs-on: ubuntu-latest
     steps:
       - run: gh issue edit $ISSUE --add-assignee 'WilliamMiceli'
@@ -23,8 +23,8 @@ jobs:
           ISSUE: ${{ github.event.issue.html_url }}
   transfer-problem-reports-to-repository:
     if: |
-      contains(github.event.pull_request.labels.*.name, 'type/problem-report') &&
-      contains(github.event.pull_request.labels.*.name, 'status/assigned')
+      contains(github.event.issue.labels.*.name, 'type/problem-report') &&
+      contains(github.event.issue.labels.*.name, 'status/assigned')
     runs-on: ubuntu-latest
     steps:
       - run: gh issue transfer $ISSUE $TARGET_REPO
