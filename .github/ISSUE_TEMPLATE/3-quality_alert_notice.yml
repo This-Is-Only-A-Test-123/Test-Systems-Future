@@ -1,6 +1,6 @@
 name: Quality Alert Notice
 description: QAN
-title: "[QAN] "
+title: "[QAN] <your title here>"
 labels: 'status/new'
 #assignees: ''
 body:
