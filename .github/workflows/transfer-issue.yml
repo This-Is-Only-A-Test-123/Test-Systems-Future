@@ -1,8 +1,9 @@
-name: Sort New Issues
+name: Handle Issues
 on:
   issues:
-    types:
-      - edited
+#     types:
+#       - edited
+#       - labeled
   workflow_dispatch:
   
 # permissions:
@@ -10,7 +11,20 @@ on:
 #   issues: write
 
 jobs:
-  transfer-issue:
+  assign-for-triage:
+    if: |
+      contains(github.event.pull_request.labels.*.name, 'status/new')
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh issue edit $ISSUE --add-assignee 'WilliamMiceli'
+        env:
+          GITHUB_TOKEN: ${{ secrets.WILLIAM_ORG_PAT }}
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
+  transfer-problem-reports-to-repository:
+    if: |
+      contains(github.event.pull_request.labels.*.name, 'type/problem-report') &&
+      contains(github.event.pull_request.labels.*.name, 'status/assigned')
     runs-on: ubuntu-latest
     steps:
       - run: gh issue transfer $ISSUE $TARGET_REPO
@@ -19,3 +33,7 @@ jobs:
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.html_url }}
           TARGET_REPO: https://github.com/This-Is-Only-A-Test-123/650XXX-Widget-FBT # Eventually this will extract the repository name from the issue itself.
+
+
+
+# Big example: https://docs.github.com/en/actions/examples/using-the-github-cli-on-a-runner
