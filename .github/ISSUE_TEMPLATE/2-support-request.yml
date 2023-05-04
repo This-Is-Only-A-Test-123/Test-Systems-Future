@@ -1,6 +1,6 @@
 name: Support Request
 description: Create a request for support
-title: "[Support Request] "
+title: "[Support Request] <your title here>"
 labels: 'status/new'
 assignees: 'WilliamMiceli' 
 body:
