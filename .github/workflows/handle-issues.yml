@@ -11,9 +11,9 @@ on:
 #   issues: write
 
 jobs:
-  assign-for-triage:
+  assign-unassigned:
     if: |
-      contains(github.event.issue.labels.*.name, 'status/new')
+      join(github.event.issue.assignees) == ''
     runs-on: ubuntu-latest
     steps:
       - run: gh issue edit $ISSUE --add-assignee 'WilliamMiceli'
