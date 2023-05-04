@@ -5,9 +5,9 @@ on:
       - edited
   workflow_dispatch:
   
-permissions:
-  contents: read
-  issues: write
+permissions: write-all
+#  contents: read
+#  issues: write
 
 jobs:
   transfer-issue:
