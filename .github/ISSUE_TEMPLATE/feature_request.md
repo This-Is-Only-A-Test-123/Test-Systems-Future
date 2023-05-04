@@ -1,5 +1,5 @@
 ---
-name: Feature request
+name: DEFAULT - Feature request
 about: Suggest an idea for this project
 title: ''
 labels: ''
