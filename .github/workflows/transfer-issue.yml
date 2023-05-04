@@ -5,9 +5,9 @@ on:
       - edited
   workflow_dispatch:
   
-permissions: write-all
-#  contents: read
-#  issues: write
+# permissions:
+#   contents: read
+#   issues: write
 
 jobs:
   transfer-issue:
@@ -15,6 +15,7 @@ jobs:
     steps:
       - run: gh issue transfer $ISSUE $TARGET_REPO
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.WILLIAM_ORG_PAT }}
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.html_url }}
           TARGET_REPO: https://github.com/This-Is-Only-A-Test-123/650XXX-Widget-FBT # Eventually this will extract the repository name from the issue itself.
